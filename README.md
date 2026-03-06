@@ -6,7 +6,7 @@ Este projeto é um painel de análise econômica desenvolvido em **JavaScript ES
 
 ## 🚀 Demonstração Visual
 
-![Dashboard Preview](https://raw.githubusercontent.com/fau-33/salario/main/dashboard_main_view_1772833264132.png)
+![Dashboard Preview](dashboard.png)
 
 > _Nota: Certifique-se de que o caminho da imagem acima esteja correto no seu repositório GitHub após o push._
 
