@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Econômico | Histórico Salarial vs Inflação</title>
+    <meta name="description"
+        content="Análise visual do histórico do salário mínimo no Brasil comparado ao índice de inflação IPCA (2010-2026).">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i data-lucide="trending-up"></i>
+                </div>
+                <span>EconoDash</span>
+            </div>
+
+            <nav class="nav-menu">
+                <button class="nav-item active" id="btn-salario" data-view="salario">
+                    <i data-lucide="banknote"></i>
+                    <span>Salário Mínimo</span>
+                </button>
+                <button class="nav-item" id="btn-inflacao" data-view="inflacao">
+                    <i data-lucide="percent"></i>
+                    <span>Inflação (IPCA)</span>
+                </button>
+                <button class="nav-item" id="btn-comparativo" data-view="comparativo">
+                    <i data-lucide="diff"></i>
+                    <span>Comparativo Global</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>Análise 2010 - 2026</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <header class="top-bar">
+                <div class="header-info">
+                    <h1 id="view-title">Histórico Salarial</h1>
+                    <p id="view-description">Evolução do Salário Mínimo no Brasil</p>
+                </div>
+                <div class="user-profile">
+                    <div class="badge">Live View</div>
+                </div>
+            </header>
+
+            <section class="dashboard-grid">
+                <!-- Data Display Case 1 & 2 -->
+                <div class="data-section" id="data-display">
+                    <div class="chart-container glass">
+                        <canvas id="mainChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Table View -->
+                <div class="table-section glass">
+                    <div class="table-header">
+                        <h3>Detalhamento por Ano</h3>
+                        <button class="btn-refresh"><i data-lucide="download"></i> Exportar</button>
+                    </div>
+                    <div class="table-wrapper">
+                        <table id="dataTable">
+                            <thead>
+                                <tr id="table-head-row">
+                                    <!-- Dynamic -->
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+                                <!-- Dynamic content -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="main-footer">
+                <p>Desenvolvido por <strong>Flávio Félix</strong></p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="script.js"></script>
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
